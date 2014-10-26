@@ -250,6 +250,8 @@ cleanAndPrepareTidyData <- function() {
                     row.names=FALSE, 
                     sep=" ")   
         
+        return
+        
 }        
         
   
