@@ -14,6 +14,7 @@ How to run script:
    > install.packages("sqldf")
    > source('<your_working_directory>/run_analysis.R')
    > getDataAndPrepareTidyData()
+
 7. You should expect to see an output file "melt_merge_dataset.txt" in the working directory
 
 
