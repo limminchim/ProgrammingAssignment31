@@ -137,9 +137,9 @@ The script is used to generate descriptive names for the activity, subject and f
 - variable descriptive label
 - average of variable values for activity and subject
 This dataset satisfy the criteria for tidy data set
-        i.   Each variable forms a column
-        ii.  Each observation forms a row
-        iii. Each table/file stores data about one kind of observation
+        - Each variable forms a column
+        - Each observation forms a row
+        - Each table/file stores data about one kind of observation
 
 7. Save tidy data set as a txt file "melt_merge_dataset.txt" created with write.table() using row.name=FALSE and space-delimited. This file has 1 header row, 11,880 data rows and 4 columns.
 
