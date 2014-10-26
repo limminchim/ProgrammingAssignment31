@@ -249,7 +249,8 @@ cleanAndPrepareTidyData <- function() {
                     file = "melt_merge_dataset.txt",
                     row.names=FALSE, 
                     sep=" ")   
-        return
+
+        
 }        
         
   
