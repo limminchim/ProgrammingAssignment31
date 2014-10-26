@@ -1,5 +1,8 @@
-## You should create one R script called run_analysis.R that does the following. 
-## R Assignment for "Getting and Cleaning Data" to:
+## R Assignment for "Getting and Cleaning Data"
+
+## File: run_analysis.R 
+## Function that does the following:
+## 0. Read training and test data from local folder
 ## 1. Merges the training and the test sets to create one data set.
 ## 2. Extracts only the measurements on the mean and standard deviation for each 
 ##    measurement. 
@@ -7,8 +10,11 @@
 ## 4. Appropriately labels the data set with descriptive variable names. 
 ## 5. From the data set in step 4, creates a second, independent tidy data set 
 ##    with the average of each variable for each activity and each subject.
+## 6. Save final data to text file
 ## 
 ## The goal is to prepare tidy data that can be used for later analysis.
+
+cleanAndPrepareTidyData <- function() {
 
 
         # install.packages("sqldf")
@@ -244,6 +250,6 @@
                     row.names=FALSE, 
                     sep=",")
         
-        
+}        
         
   
