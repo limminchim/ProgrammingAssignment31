@@ -1,6 +1,16 @@
 Description: Code Book for Programming Assignment 1 under "Getting and Cleaning Data" - Coursera
 This Code Book describes the variables, the data, and any transformations or work that was performed to clean up the data 
 
+Fulfill requirements:
+======================
+The assignment has been fulfilled through the following steps:
+- Step 3: Merges the training and the test sets to create one data set.
+- Step 4: Extracts only the measurements on the mean and standard deviation for each measurement.
+- Step 2: Uses descriptive activity names to name the activities in the data set.
+- Step 5: Appropriately labels the data set with descriptive variable names. 
+- Step 6: From the data set in step 5, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+- Step 7: Save tidy data set as a txt file created with write.table() using row.name=FALSE
+
 The source data set includes the following files:
 =================================================
 - 'README.txt': Code Book for source dataset 
@@ -120,12 +130,18 @@ The script is used to generate descriptive names for the activity, subject and f
 6. Create another independent tidy data set with the average of each variable for each activity and each subject from the data set derived in the previous step.
 6a. Melt the merged dataset "merged_dataset_with_mean_std" to get a narrow dataset where ids = activity + subject and variables = all features
 6b. Compute the average (mean) of each variable for each activity and each subject through a dcast. We end up with a wide dataset.
-6c. Melt the dataset to get it back into narrow format "melt_merge_dataset" where this dataset satisfy the criteria for tidy data set
+6c. Melt the dataset to get it back into narrow format "melt_merge_dataset" with 11,880 observtions of 4 variables.
+11,880 observtions = 30 subjects x 6 activities X 66 measurements and the variables are
+- activity description
+- subject
+- variable descriptive label
+- average of variable values for activity and subject
+This dataset satisfy the criteria for tidy data set
         i.   Each variable forms a column
         ii.  Each observation forms a row
         iii. Each table/file stores data about one kind of observation
 
-7. Save tidy data set as a txt file "melt_merge_dataset.txt" created with write.table() using row.name=FALSE and space-delimited
+7. Save tidy data set as a txt file "melt_merge_dataset.txt" created with write.table() using row.name=FALSE and space-delimited. This file has 1 header row, 11,880 data rows and 4 columns.
 
   
 
