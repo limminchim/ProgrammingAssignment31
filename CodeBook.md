@@ -1,4 +1,4 @@
-ProgrammingAssignment31
-=======================
+Description: Code Book for Programming Assignment 1 under "Getting and Cleaning Data" - Coursera
 
-Code Book for Programming Assignment 1 under "Getting and Cleaning Data" - Coursera
+
+
