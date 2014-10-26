@@ -120,12 +120,6 @@
         ####################################################
         ## 2. Extract only the measurements on the mean and standard deviation for each measurement. 
 
-        ## This gets you 79 features
-        ## extracted_features <- sqldf("select * from features where 
-        ##                             feature_name like '%std%' or 
-        ##                             feature_name like '%mean()%' or 
-        ##                             feature_name like '%meanFreq()%'")
-        ## This gets you 66 features
         extracted_features <- sqldf("select * from features where 
                                     feature_name like '%std%' or 
                                     feature_name like '%mean()%'")
@@ -195,14 +189,14 @@
                                        "time.domain.body.acceleration")
         ## direction of signals
         col_names2 <- str_replace_all(col_names2, pattern = "..X", 
-                                       ".x.direction")
+                                       "..x.direction")
         col_names2 <- str_replace_all(col_names2, pattern = "..Y", 
-                                       ".y.direction")        
+                                       "..y.direction")        
         col_names2 <- str_replace_all(col_names2, pattern = "..Z", 
-                                       ".z.direction") 
+                                       "..z.direction") 
         ## derived values
         col_names2 <- str_replace_all(col_names2, pattern = "meanFreq..", 
-                                       "weighted.average.of.frequency.components")
+                                       ".weighted.average.of.frequency.components")
         col_names2 <- str_replace_all(col_names2, pattern = "mean..", 
                                        "mean.value")
         col_names2 <- str_replace_all(col_names2, pattern = "std..", 
@@ -214,9 +208,6 @@
         ## Replace the column names with descriptive variable names. 
         colnames(merged_dataset_with_mean_std) <- valid_col_names
     
-        ## convert back to data frame
-        ## col_names2 <-data.frame(col_names2)
- 
         ####################################################
         ####################################################
         ## 5. From the data set in step 4, creates a second, independent tidy 
@@ -239,31 +230,15 @@
         ## a. each variable forms a column
         ## b. each observation forms a row
         ## c. Each table/file stores data about one kind of observation
-        
         melt_merge_dataset <- melt(merged_dataset_wide, 
                                    id.vars=valid_col_names1,
                                    variable.name = "variable", 
                                    value.name = "average.of.variable.values.for.activity.and.subject") 
-
-        ## test results
-#         testanswer <- sqldf("select * from melt_merge_dataset where 
-#                             activity == 'LAYING' and 
-#                             subject == 1")        
-        
+          
         ####################################################
         ####################################################
         ## save tidy data set created in step 5 of the instructions 
         ## as a txt file created with write.table() using row.name=FALSE 
-        write.table(merged_dataset_with_mean_std, 
-                    file = "merged_dataset_with_mean_std.txt",
-                    row.names=FALSE, 
-                    sep=",")
-        
-        write.table(merged_dataset_wide, 
-                    file = "merged_dataset_wide.txt",
-                    row.names=FALSE, 
-                    sep=",")
-        
         write.table(melt_merge_dataset, 
                     file = "melt_merge_dataset.txt",
                     row.names=FALSE, 
