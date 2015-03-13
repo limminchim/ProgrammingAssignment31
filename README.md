@@ -11,9 +11,9 @@ How to run script:
 4. Start RStudio
 5. Set the working directory to be the same as that above
 6. Open "run_analysis.R" file in R Studio and run the following scripts
-   > install.packages("sqldf")
-   > source('<your_working_directory>/run_analysis.R')
-   > getDataAndPrepareTidyData()
+   > install.packages("sqldf")  
+   > source('<your_working_directory>/run_analysis.R')  
+   > getDataAndPrepareTidyData()  
 
 7. You should expect to see an output file "melt_merge_dataset.txt" in the working directory
 
